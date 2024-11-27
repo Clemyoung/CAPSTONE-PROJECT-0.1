@@ -4,26 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - TaskMaster</title>
-    <link rel="stylesheet" href="/frontend/css/register.css">
+    <link rel="stylesheet" href="/frontend/css/register.css"> <!-- External CSS link -->
+    <script src="/frontend/js/register.js" defer></script> <!-- Defer loading of JavaScript -->
+    <script src="/frontend/js/utils.js" defer></script> <!-- Defer loading of utility scripts -->
 </head>
 <body>
-    <div class="container">
-        <h1>TaskMaster Registration</h1>
-        <form id="register-form">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+    <main class="container" role="main">
+        <h1 aria-label="TaskMaster Registration">Join TaskMaster</h1>
+        <form id="register-form" action="/submit-registration" method="POST" aria-labelledby="registration-form">
+            <fieldset>
+                <legend class="visually-hidden">Registration Information</legend>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <div class="form-group">
+                    <label for="username">Choose a Username:</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your username" aria-required="true">
+                </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="example@example.com" aria-required="true">
+                </div>
 
-            <button type="submit" class="btn">Register</button>
+                <div class="form-group">
+                    <label for="password">Create a Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••" aria-required="true">
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        <p>Your password must be at least 8 characters long and contain a mix of letters and numbers.</p>
+                    </small>
+                </div>
+
+                <button type="submit" class="btn">Create Account</button>
+            </fieldset>
         </form>
-        <p>Already have an account? <a href="/frontend/html/login.html">Login here</a>.</p>
-    </div>
-    <script src="/frontend/js/register.js"></script>
-    <script src="/frontend/js/utils.js"></script>
+
+        <p>Already have an account? 
+            <a href="/frontend/html/login.html">Login here</a>.
+        </p>
+
+        <!-- Optional: Add a footer for additional links or information -->
+        <footer>
+            <p>&copy; 2024 TaskMaster. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <!-- Accessibility enhancements -->
+    <script>
+        // Example of a simple validation script
+        document.getElementById('register-form').addEventListener('submit', function(event) {
+            const password = document.getElementById('password').value;
+            if (password.length < 8) {
+                alert('Password must be at least 8 characters long.');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
 </body>
 </html>

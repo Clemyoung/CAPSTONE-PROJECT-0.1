@@ -6,96 +6,122 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Roboto', sans-serif; /* Consistent font */
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Gradient background */
+    color: #333; /* Dark gray text for readability */
     padding: 20px;
 }
 
 .container {
     max-width: 500px;
     margin: 0 auto;
-    background-color: white;
+    background-color: white; /* White background for the container */
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px; /* Rounded corners for a modern look */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Depth effect */
 }
 
 h1 {
     font-size: 28px;
-    color: #007bff;
+    color: #4facfe; /* Teal color for the heading */
     text-align: center;
     margin-bottom: 20px;
 }
 
 form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack form elements vertically */
+}
+
+fieldset {
+    border: none; /* Remove default fieldset border */
+}
+
+legend {
+    display: none; /* Hide legend since it's visually hidden */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
 }
 
 label {
-    margin: 10px 0 5px;
-    font-weight: bold;
+    margin-bottom: 5px; /* Space below label */
+    font-weight: bold; /* Bold labels for emphasis */
 }
 
-input, textarea, select {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    padding: 12px; /* Increased padding for better touch targets */
+    margin-bottom: 10px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light gray border for input fields */
+    border-radius: 6px; /* Rounded corners */
+    font-size: 16px; /* Font size for inputs */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4facfe; /* Highlight border on focus */
 }
 
 input[type="submit"] {
-    background-color: #007bff;
+    background-color: #4facfe; /* Teal color for submit button */
     color: white;
     border: none;
     cursor: pointer;
     font-size: 18px;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    padding: 12px; /* Increased padding for better touch targets */
+    border-radius: 6px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #00f2fe; /* Lighter teal on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover for feedback */
 }
 
 /* Link Styling */
 a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 16px;
-    text-align: center;
+    color: #4facfe; /* Teal color for links */
+    text-decoration: none; /* Remove underline by default */
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline links on hover for clarity */
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
     .container {
-        width: 90%;
+        width: 90%; /* Full width on small screens with padding adjustments */
         padding: 20px;
+        box-shadow: none; /* Remove shadow on mobile for simplicity */
+        border-radius: 8px; /* Slightly smaller radius on mobile devices */
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 24px; /* Smaller heading on mobile devices */
+        margin-bottom: 15px; /* Adjust margin for smaller screens */
     }
 }
 
+/* Button Class (if used elsewhere) */
 .btn {
     width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
+    padding: 12px;
+    background-color: #4facfe; /* Teal button color consistent with submit button */
+    border-radius: 6px; 
     color: #fff;
     font-size: 16px;
-    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #00f2fe; /* Lighter teal on hover for buttons as well */
 }

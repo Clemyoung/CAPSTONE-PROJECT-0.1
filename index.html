@@ -5,28 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome</title>
   <style>
-
-body {
-      font-family: Arial, sans-serif;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f4f4f4;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
     }
 
     .message {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: bold;
-      color: #007bff;
+      color: #ffffff;
       text-align: center;
+      padding: 20px 40px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .message {
+        font-size: 24px;
+        padding: 15px 30px;
+      }
     }
   </style>
 </head>
 <body>
 
-    <div class="message">Welcome to your Task Manager</div>
+    <div class="message">Welcome to Your Task Manager</div>
 
   <script>
     setTimeout(() => {
